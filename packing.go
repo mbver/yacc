@@ -60,7 +60,7 @@ func packGotosByCol() {
 	packedGotos = make([][]int, nontermN+1)
 	nextStates := make([]int, nstate)
 	for i := 1; i <= nontermN; i++ {
-		cgoCol(i, nextStates)
+		computeGotoCol(i, nextStates)
 		// compute the default goto
 		defGoto := -1
 		maxCount := 0
@@ -103,7 +103,7 @@ func packGotosByCol() {
 
 // compute a column of goto table for non-terminal symbol s
 // find all the pairs (current state, next state) transitions induced by s
-func cgoCol(s int, nextStates []int) {
+func computeGotoCol(s int, nextStates []int) {
 	// if a first symbol of a kernel item can derive some symbol
 	// then the derived symbol must be the first RHS of the derived item while LHS is that first symbol
 	// so if a symbol from some kernel can derive s,
