@@ -1,10 +1,7 @@
 package main
 
-var zzclose = 0 // count closures
-
 /* closure computes LALR(1) closure for state n. used in stategen*/
 func closure1(n int) {
-	zzclose++
 	cwp = 0 // reset current pointer for working set
 	// copy kernel items of new state
 	for p := kernlp[n]; p < kernlp[n+1]; p++ {
@@ -88,7 +85,6 @@ func closure1(n int) {
 
 /* closure0 computes LR0 closure for state n. used in writing output*/
 func closure0(n int) {
-	zzclose++
 	cwp = 0 // reset current pointer for working set
 	// copy kernel items of new state
 	for p := kernlp[n]; p < kernlp[n+1]; p++ {

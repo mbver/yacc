@@ -14,7 +14,6 @@ func summary() {
 	fmt.Fprintf(foutput, "%v shift/reduce, %v reduce/reduce conflicts reported\n", zzsrconf, zzrrconf)
 	fmt.Fprintf(foutput, "%v working sets used\n", len(wSet))
 	fmt.Fprintf(foutput, "memory: parser %v/%v\n", maxGotoIdx, ACTSIZE)
-	fmt.Fprintf(foutput, "%v extra closures\n", zzclose-2*nstate)
 	fmt.Fprintf(foutput, "%v shift entries, %v exceptions\n", zzshift, zzexcp)
 	fmt.Fprintf(foutput, "%v goto entries\n", zzgoent)
 	fmt.Fprintf(foutput, "%v entries saved by goto default\n", zzgobest)
