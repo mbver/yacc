@@ -117,7 +117,7 @@ func stategen() {
 			if w.done {
 				continue
 			}
-			w.done = true
+			wSet[j].done = true
 			first := w.item.first
 
 			// first can never be 0 because terminal symbol starts from 1.
