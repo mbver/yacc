@@ -16,7 +16,7 @@ func id(prd []int) int {
 }
 
 // compute production-yield for each non-terminal symbol
-func copyFields() {
+func computeYields() {
 	yields = make([][][]int, nontermN+1)
 
 	yld := make([][]int, nprod)
@@ -194,7 +194,7 @@ func prod2str(p []int) string {
 
 // compute production yields, nullable non-terms and first_sets
 func procProds() {
-	copyFields()
+	computeYields()
 	computeEmpty()
 	computeFirstsets()
 }
